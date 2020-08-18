@@ -8,9 +8,12 @@ import java.sql.SQLException;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-public class BaseClass {
+
+public class BaseClass 
+{
 	@BeforeSuite
-	public void beforeSuiteConfig() {
+	public void beforeSuiteConfig() 
+	{
 		baseURI = "http://localhost:8084";
 		port = 8084;
 		DataBaseUtilities.connectToDB();
@@ -19,7 +22,9 @@ public class BaseClass {
 	
 	
 	@AfterSuite
-	public void confibAfterSuite() throws SQLException {
+	public void confibAfterSuite() throws SQLException 
+	
+	{
 
 		DataBaseUtilities.closeDb();
 	}
