@@ -14,7 +14,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 
-public class CreateProjectCompletedStaus extends BaseClass{
+public class CreateProjectCompletedStausTest extends BaseClass{
 	
 	
 

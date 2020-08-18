@@ -14,39 +14,38 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 
-public class CreateProject extends BaseClass{
+public class CreateProjectOnGoingStatusTest extends BaseClass{
 	
 	
 
 	@Test
 	public void createProjectTest() throws Throwable {
-		
-		String actAPIProjectNAme = "ABC";
-		String projectStatus = "Completed";
+		String projectStatus = "OnGoing";
+		String actAPIProjectNAme = "jio";
         Project pObj = new Project(actAPIProjectNAme, "aug", "deepak", projectStatus, 12);
 		
    	 
-        Response resp =	given()
+      Response resp =  given()
                         .contentType(ContentType.JSON)
                         .body(pObj)
-                        .when()
-                        .post(IEndPoints.addSinglePRoject);
-			   		resp.then()
-				       	.assertThat().statusCode(201)
-				       	.and()
-				       	.assertThat().contentType(ContentType.JSON)
-				       	.and()
-				        .log().all();
-			   		
-			   		
+                      .when()
+                      .post(IEndPoints.addSinglePRoject);
+			   resp.then()
+				       .assertThat().statusCode(201)
+				       .and()
+				       .assertThat().contentType(ContentType.JSON)
+				       .and()
+				         .log().all();
        String scuMg = resp.jsonPath().get("msg");
        Assert.assertEquals(scuMg, "Successfully Added");
        
-              //Connect to dataDase
-       String dbProjectNAme = DataBaseUtilities.executeQueryAndGetData("select *from project", 4, actAPIProjectNAme);
-       Assert.assertEquals(dbProjectNAme, actAPIProjectNAme);
        
-	
+       //Connect to dataDase
+       String captureStatus = DataBaseUtilities.executeQueryAndGetData("select *from project", 5, projectStatus);
+       Assert.assertEquals(captureStatus, projectStatus);
+       
+       //Connect GUI , get the PRojectNme & verify
+       
 	}
 
 }

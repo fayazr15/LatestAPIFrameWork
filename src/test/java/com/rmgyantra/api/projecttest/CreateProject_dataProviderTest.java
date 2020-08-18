@@ -3,6 +3,7 @@ package com.rmgyantra.api.projecttest;
 import static io.restassured.RestAssured.given;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.rmgyantra.api.pojoClassLib.Project;
@@ -14,14 +15,13 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 
-public class CreateProjectOnGoingStatus extends BaseClass{
+public class CreateProject_dataProviderTest extends BaseClass{
 	
 	
 
-	@Test
-	public void createProjectTest() throws Throwable {
-		String projectStatus = "OnGoing";
-		String actAPIProjectNAme = "jio";
+	@Test(dataProvider = "getData")
+	public void createProjectTest(String actAPIProjectNAme, String projectStatus) throws Throwable {
+	
         Project pObj = new Project(actAPIProjectNAme, "aug", "deepak", projectStatus, 12);
 		
    	 
@@ -39,13 +39,30 @@ public class CreateProjectOnGoingStatus extends BaseClass{
        String scuMg = resp.jsonPath().get("msg");
        Assert.assertEquals(scuMg, "Successfully Added");
        
+              //Connect to dataDase
+       String dbProjectNAme = DataBaseUtilities.executeQueryAndGetData("select *from project", 4, actAPIProjectNAme);
+       Assert.assertEquals(dbProjectNAme, actAPIProjectNAme);
        
-       //Connect to dataDase
-       String captureStatus = DataBaseUtilities.executeQueryAndGetData("select *from project", 5, projectStatus);
-       Assert.assertEquals(captureStatus, projectStatus);
-       
-       //Connect GUI , get the PRojectNme & verify
-       
+	
+	}
+	
+	@DataProvider
+	public Object[][] getData() {
+		Object[][] objArr = new Object[4][2];
+		objArr[0][0] = "IDBS-0";
+		objArr[0][1] = "Completed";
+		
+		objArr[1][0] = "IDBS-1";
+		objArr[1][1] = "Completed";
+		
+		objArr[2][0] = "IDBS-2";
+		objArr[2][1] = "Completed";
+		
+		objArr[3][0] = "IDBS-3";
+		objArr[3][1] = "Completed";
+		
+		return objArr;
+		
 	}
 
 }
