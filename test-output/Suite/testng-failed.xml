@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <test name="Test(failed)">
+    <classes>
+      <class name="com.rmgyantra.api.projecttest.CreateProjectCompletedStaus">
+        <methods>
+          <include name="createProjectTest"/>
+          <include name="beforeSuiteConfig"/>
+          <include name="confibAfterSuite"/>
+        </methods>
+      </class> <!-- com.rmgyantra.api.projecttest.CreateProjectCompletedStaus -->
+      <class name="com.rmgyantra.api.projecttest.CreateProjectOnGoingStatus">
+        <methods>
+          <include name="createProjectTest"/>
+        </methods>
+      </class> <!-- com.rmgyantra.api.projecttest.CreateProjectOnGoingStatus -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

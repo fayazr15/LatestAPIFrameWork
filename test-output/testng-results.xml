@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="1952" started-at="2020-08-18T15:26:40Z" finished-at="2020-08-18T15:26:42Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="1952" started-at="2020-08-18T15:26:40Z" finished-at="2020-08-18T15:26:42Z">
+      <class name="com.rmgyantra.api.projecttest.CreateProject">
+        <test-method status="PASS" signature="beforeSuiteConfig()[pri:0, instance:com.rmgyantra.api.projecttest.CreateProject@4439f31e]" name="beforeSuiteConfig" is-config="true" duration-ms="619" started-at="2020-08-18T20:56:39Z" finished-at="2020-08-18T20:56:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuiteConfig -->
+        <test-method status="PASS" signature="createProjectTest()[pri:0, instance:com.rmgyantra.api.projecttest.CreateProject@4439f31e]" name="createProjectTest" duration-ms="1921" started-at="2020-08-18T20:56:40Z" finished-at="2020-08-18T20:56:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createProjectTest -->
+        <test-method status="PASS" signature="confibAfterSuite()[pri:0, instance:com.rmgyantra.api.projecttest.CreateProject@4439f31e]" name="confibAfterSuite" is-config="true" duration-ms="16" started-at="2020-08-18T20:56:42Z" finished-at="2020-08-18T20:56:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- confibAfterSuite -->
+      </class> <!-- com.rmgyantra.api.projecttest.CreateProject -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

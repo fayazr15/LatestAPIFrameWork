@@ -14,7 +14,7 @@ public class BaseClass
 	@BeforeSuite
 	public void beforeSuiteConfig() 
 	{
-		baseURI = "http://localhost:8084";
+		baseURI = "http://localhost:";
 		port = 8084;
 		DataBaseUtilities.connectToDB();
 	}

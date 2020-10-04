@@ -1,6 +1,6 @@
 package com.rmgyantra.api.projecttest;
 
-import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.*;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -29,7 +29,7 @@ public class CreateProject_dataProviderTest extends BaseClass{
                         .contentType(ContentType.JSON)
                         .body(pObj)
                       .when()
-                      .post(IEndPoints.addSinglePRoject);
+                      	.post(IEndPoints.addSinglePRoject);
 			   resp.then()
 				       .assertThat().statusCode(201)
 				       .and()
